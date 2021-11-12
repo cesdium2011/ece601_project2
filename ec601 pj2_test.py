@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  4 18:16:10 2021
-
-@author: cesdi
-"""
 
 import os
 import json
@@ -12,7 +6,7 @@ import requests
 bearer_token = os.environ.get("BEARER_TOKEN")
 
 def create_url():
-    tweets_fields = "tweet,fields=lang,author_id"
+    tweet_fields = "tweet,fields=lang,author_id"
     # Tweet fields are adjustable.
     # Options include:
     # attachments, author_id, context_annotations,
@@ -20,7 +14,7 @@ def create_url():
     # in_reply_to_user_id, lang, non_public_metrics, organic_metrics,
     # possibly_sensitive, promoted_metrics, public_metrics, referenced_tweets,
     # source, text, and withheld
-    ids = "ids=Carl70421449"
+    ids = "ids=1278747501642657792,1255542774432063488"
     url = "https://api.twitter.com/2/tweets?{}&{}".format(ids, tweet_fields)
     return url
     
